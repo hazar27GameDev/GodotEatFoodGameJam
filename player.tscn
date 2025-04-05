@@ -1,18 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://drowslitkutn5"]
 
 [ext_resource type="Script" uid="uid://bsj7bc7r4tgyx" path="res://character_body_2d.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://cfq4ct668fqom" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c43t247wjg2s2" path="res://Sprites/New Piskel (20).png" id="2_onrkg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 5.09902
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hqtel")
+shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.140625, 0.140625)
-texture = ExtResource("2_i3pqv")
+texture = ExtResource("2_onrkg")
+vframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
