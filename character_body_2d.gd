@@ -1,9 +1,10 @@
+class_name player
 extends CharacterBody2D
 
 @onready var sprite = $Sprite2D
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -250.0
 
 var frog = false
 
@@ -40,3 +41,7 @@ func _physics_process(delta: float) -> void:
 			sprite.skew = 0
 
 	move_and_slide()
+
+func dead_frog():
+	frog = true
+	sprite.play("Frog")
