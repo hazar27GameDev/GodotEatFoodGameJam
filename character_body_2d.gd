@@ -26,12 +26,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if Input.is_action_pressed("left"):
-		sprite.skew = -0.5
+		sprite.skew = -0.3
+		sprite.flip_h = true
 	else:
 		if Input.is_action_just_released("right"):
 			sprite.skew = 0
+			
 	if Input.is_action_pressed("right"):
-		sprite.skew = 0.5
+		sprite.skew = 0.3
+		sprite.flip_h = false
 	else:
 		if Input.is_action_just_released("left"):
 			sprite.skew = 0
